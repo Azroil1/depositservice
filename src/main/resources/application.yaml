@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: deposit
+  datasource:
+    url: jdbc:postgresql://localhost:5432/depositservise?currentSchema=depositsmtsbank
+    username: postgres
+    password: Gukm5998
+    driver-class-name: org.postgresql.Driver
+  security:
+    user:
+      name:
+      password:
+  flyway:
+    baseline-on-migrate: true
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+
+jwt:
+  secret: YWRhcGRra29rc2xzZGtvZWtkZGxrdm1pbWlmanZrZnZtZm12bWdqa3ZkanNvaWZqaW9jbXNka2xjdmtm
+server:
+  port: 8082
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://host.docker.internal:8888/eureka/
